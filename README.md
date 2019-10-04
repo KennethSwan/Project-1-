@@ -18,4 +18,8 @@
 * After the user wins or loses, and their mascot appears, the words "Game Over" will be displayed on the screen and the user will have the option to click a "Play Again" button to bring them back to the beginning of the game.
 
 ![GameStart](StartGame.png)
-![SecondScreen]()
+![SecondScreen](SecondScreen.png)
+![Question](Question.png)
+![Gritty](Gritty.png)
+![CorrectAnswer](CorrectAnswer.png)
+![GameOver](Game Over.png)
