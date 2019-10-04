@@ -17,4 +17,5 @@
 * If the player makes it all the way to level 15, a slightly more cheerful hooligan will appear.
 * After the user wins or loses, and their mascot appears, the words "Game Over" will be displayed on the screen and the user will have the option to click a "Play Again" button to bring them back to the beginning of the game.
 
-![GameStart](
+![GameStart](StartGame.png)
+![SecondScreen]()
