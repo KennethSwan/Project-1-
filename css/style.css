@@ -1,3 +1,9 @@
 body {
 	background-color: darkblue;
+	color: gold;
+}
+header{
+	border: 2px solid #1C6EA4;
+	font-size: 60px;
+	text-align: center;
 }
