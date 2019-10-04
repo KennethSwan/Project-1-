@@ -30,10 +30,20 @@
 // If get all questions right, show Congratulations
 // along with a DIFFERENT happier mascot
 
-// if loop will be needed for each question if any of 
+// if statement will be needed for each question if any of 
 // the three incorrect answers are chosen
 // use dancing gritty gif on red background with 
 // GAME OVER and give option to play again from 
 // from the beginning.
+
+// if statement will also need to be created for each 
+// "Quit Game" button on the "Correct Answer" screen
+// So that the user can all the way back to the start
+// of the game. 
+
+// if statement will be needed for the 
+// "Continue" button on the "Correct Answer"
+// screen as well to pull up the next question
+
 
 
