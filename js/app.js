@@ -1,6 +1,356 @@
+// question
+// 	--- 4 answers
+// 	--- info about which is correct
+// 	--- question itself
+
+
+const questions = [
+	{
+		text: "What is?",
+		answers: [
+			{
+				text:"Bears",
+				correct: true,
+			}, 
+			{
+				text:"Vikings",
+				correct: false,
+			},
+			{
+				text:"Packers",
+				correct: false,
+			},
+			{
+				text:"Lions",
+				correct: false,
+			},	 
+		],
+	},
+
+	{
+
+		text: "Who is?",
+		answers: [
+			{
+				text: "Eagles",
+				correct: true,
+			},
+			{   
+				text: "Falcons",
+				correct: false,
+			},	
+			{
+				text: "Patriots",
+				correct: false,
+			},
+			{	
+				text: "Dolphins",
+				correct: false,
+			},
+		],
+	},
+	
+	{	
+		text: "Where is?",
+		answers: [
+			{
+				text: "Chicago",
+				correct: true,
+			},
+			{   
+				text: "Green Bay",
+				correct: false,
+			},	
+			{
+				text: "Minnesota",
+				correct: false,
+			},
+			{	
+				text: "Miami",
+				correct: false,
+
+			},
+		],
+	},
+	
+	{	
+		text: "Who is?",
+		answers: [
+			{
+				text: "Rodger Goodell",
+				correct: true,
+			},
+			{   
+				text: "Brian Pace",
+				correct: false,
+			},	
+			{
+				text: "Mike Nagy",
+				correct: false,
+			},
+			{	
+				text: "Nunzio Campanelli",
+				correct: false,
+
+			},
+		],
+	},
+	
+	{	
+		text: "Where is?",
+		answers: [
+			{
+				text: "Ohio",
+				correct: true,
+			},
+			{   
+				text: "Illinois",
+				correct: false,
+			},	
+			{
+				text: "Missouri",
+				correct: false,
+			},
+			{	
+				text: "Florida",
+				correct: false,
+
+			},
+		],
+	},
+	
+	{	
+		text: "Who is?",
+		answers: [
+			{
+				text: "Dan Marino",
+				correct: true,
+			},
+			{   
+				text: "Doug Flutie",
+				correct: false,
+			},	
+			{
+				text: "Michael Jordon",
+				correct: false,
+			},
+			{	
+				text: "Daffy Duck",
+				correct: false,
+
+			},
+		],
+	},
+
+	{
+		text: "Laces out...?",
+		answers: [
+			{
+				text: "Dan",
+				correct: true,
+			},
+			{   
+				text: "Doug",
+				correct: false,
+			},	
+			{
+				text: "Don",
+				correct: false,
+			},
+			{	
+				text: "Daffy",
+				correct: false,
+
+			},
+		],
+	},
+
+		{
+		text: "Nickname?",
+		answers: [
+			{
+				text: "The Great One",
+				correct: true,
+			},
+			{   
+				text: "The Golden Jet",
+				correct: false,
+			},	
+			{
+				text: "Nature Boy",
+				correct: false,
+			},
+			{	
+				text: "Zippy",
+				correct: false,
+
+			},
+		],
+	},
+
+		{
+		text: "What Year?",
+		answers: [
+			{
+				text: "1919",
+				correct: true,
+			},
+			{   
+				text: "2010",
+				correct: false,
+			},	
+			{
+				text: "2013",
+				correct: false,
+			},
+			{	
+				text: "2015",
+				correct: false,
+
+			},
+		], 
+	},
+		{
+		text: "What City?",
+		answers: [
+			{
+				text: "Chicago",
+				correct: true,
+			},
+			{   
+				text: "New York",
+				correct: false,
+			},	
+			{
+				text: "Los Angeles",
+				correct: false,
+			},
+			{	
+				text: "Alberqerque",
+				correct: false,
+
+			},
+		],
+	},
+		{
+		text: "What Ball?",
+		answers: [
+			{
+				text: "Football",
+				correct: true,
+			},
+			{   
+				text: "Baseball",
+				correct: false,
+			},	
+			{
+				text: "Golden Snitch",
+				correct: false,
+			},
+			{	
+				text: "Birdie",
+				correct: false,
+
+			},
+		],
+	},
+
+		{
+		text: "What Bat?",
+		answers: [
+			{
+				text: "Baseball Bat",
+				correct: true,
+			},
+			{   
+				text: "Cricket Bat",
+				correct: false,
+			},	
+			{
+				text: "Batman",
+				correct: false,
+			},
+			{	
+				text: "Birdman",
+				correct: false,
+
+			},
+		],
+	},
+
+		{
+		text: "What Field?",
+		answers: [
+			{
+				text: "Pitch",
+				correct: true,
+			},
+			{   
+				text: "Diamond",
+				correct: false,
+			},	
+			{
+				text: "Court",
+				correct: false,
+			},
+			{	
+				text: "Green",
+				correct: false,
+
+			},
+		],
+	},	
+		{
+		text: "What Statdium?",
+		answers: [
+			{
+				text: "Soldier Field",
+				correct: true,
+			},
+			{   
+				text: "Gillete Statdium",
+				correct: false,
+			},	
+			{
+				text: "Chicago Stadium",
+				correct: false,
+			},
+			{	
+				text: "Lambeau Field",
+				correct: false,
+
+			},
+		],
+	},	
+
+	{
+	text: "Duo Nickname?",
+	answers: [
+		{
+			text: "Bash Brothers",
+			correct: true,
+		},
+		{   
+			text: "Super Smash Brothers",
+			correct: false,
+		},	
+		{
+			text: "Yoshi and Luigi",
+			correct: false,
+		},
+		{	
+			text: "Step Brothers",
+			correct: false,
+
+		},
+	],
+},
+]
+
 class User {
-	score = 0; //Everyone starts at zero
+	// score = 0; //Everyone starts at zero
 }
+
 const game = {
 	score: 0,
 
