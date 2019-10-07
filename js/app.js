@@ -324,27 +324,27 @@ const questions = [
 	},	
 
 	{
-	text: "Duo Nickname?",
-	answers: [
-		{
-			text: "Bash Brothers",
-			correct: true,
-		},
-		{   
-			text: "Super Smash Brothers",
-			correct: false,
-		},	
-		{
-			text: "Yoshi and Luigi",
-			correct: false,
-		},
-		{	
-			text: "Step Brothers",
-			correct: false,
+		text: "Duo Nickname?",
+		answers: [
+			{
+				text: "Bash Brothers",
+				correct: true,
+			},
+			{   
+				text: "Super Smash Brothers",
+				correct: false,
+			},	
+			{
+				text: "Yoshi and Luigi",
+				correct: false,
+			},
+			{	
+				text: "Step Brothers",
+				correct: false,
 
-		},
-	],
-},
+			},
+		],
+	},
 ]
 
 class User {
@@ -353,10 +353,43 @@ class User {
 
 const game = {
 	score: 0,
-
+	usedQuestions: [],
 	start(){
+		this.showQuestion()
+	},
+
+
+	// user sees question w answers:
+	showQuestion() { // 1. get this working
+
+		// get question out of main array
+		const displayedQuestion = questions.pop();
+		console.log(displayedQuestion);
+
+		const displayedAnswers = displayedQuestion.answers
+		for(let i = 0; i < displayedQuestion.answers.length; i++){
+			const $answerDiv = $('<div/>');
+			$answerDiv.text(displayedQuestion.answers[i].text);
+			$(`#answer-${i+1}`).append($answerDiv);
+			console.log(displayedAnswers);
+
+		}
+		// console.log(questions[0]);
+		// make question appear on screen -- don't forget to remove old one
+			// (jQuery)
+		const $displayedQuestion = $('#displayed-question')
+		$displayedQuestion.attr('id', 'displayed-question')	
+		$displayedQuestion.text(`question: ${displayedQuestion.text}`);
+		// put it used questions array
+		this.usedQuestions.push(displayedQuestion);
+		console.log(this.usedQuestions);
+
+
 	}
+
 }
+
+game.start()
 // User sees screen with "Start Game" button,
 // click on that and get sent to next screen
 // user will see all of the levels of the game next
@@ -407,5 +440,8 @@ const game = {
 $('#start').on('click', (event) => {
 	console.log('Button Works');
 });
-
+$('#answer-1').on('click', (event) => {
+	console.log('This is totally right!');
+});
+// 2. next questions -- button that scrolls through questions
 
