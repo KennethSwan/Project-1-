@@ -1,3 +1,12 @@
+class User {
+	score = 0; //Everyone starts at zero
+}
+const game = {
+	score: 0,
+
+	start(){
+	}
+}
 // User sees screen with "Start Game" button,
 // click on that and get sent to next screen
 // user will see all of the levels of the game next
@@ -45,5 +54,8 @@
 // "Continue" button on the "Correct Answer"
 // screen as well to pull up the next question
 
+$('#start').on('click', (event) => {
+	console.log('Button Works');
+});
 
 
