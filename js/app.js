@@ -354,13 +354,14 @@ class User {
 const game = {
 	score: 0,
 	usedQuestions: [],
-	start(){
+	
+	start: function(){
 		this.showQuestion()
 	},
 
 
 	// user sees question w answers:
-	showQuestion() { // 1. get this working
+	showQuestion: function() { // 1. get this working
 
 		// get question out of main array
 		const displayedQuestion = questions.pop();
@@ -368,7 +369,10 @@ const game = {
 
 		const displayedAnswers = displayedQuestion.answers
 		for(let i = 0; i < displayedQuestion.answers.length; i++){
-			const $answerDiv = $('<div/>');
+			const $answerDiv = $('<div/>'); 
+			
+			// somehow put whether this is correct "in" the button
+
 			$answerDiv.text(displayedQuestion.answers[i].text);
 			$(`#answer-${i+1}`).append($answerDiv);
 			console.log(displayedAnswers);
@@ -385,6 +389,11 @@ const game = {
 		console.log(this.usedQuestions);
 
 
+	},
+
+	checkCorrect: function() {
+		// this will need access to the clicked button
+		// see if the clicked element is "correct"
 	}
 
 }
@@ -459,6 +468,11 @@ $('#answer-3').on('click', (event) => {
 	$("#answer-3").css("color", "red");
 });
 $('#answer-4').on('click', (event) => {
+	console.log(event);
+	// currentTarget is a property on the event object -- this is the HTML element listener was attached to
+	console.log(event.currentTarget); 
+
+	game.checkCorrect()	
 	console.log('Sorry, this is wrong!');
 });
 $('#answer-4').on('click', (event) => {
@@ -467,5 +481,23 @@ $('#answer-4').on('click', (event) => {
 $('#next-question').on('click', (event) => {
 	console.log('Pulling next question');
 });
-// 2. next questions -- button that scrolls through questions
 
+const me = {
+	name: "Ken",
+	greet: function() {
+		console.log("hi");
+	}
+}
+
+console.log(me.name); // me is the object, name is the property(k-v pair) on the object
+me.greet()
+
+// 1. nextQuestion should remove old one, show next one
+
+// 2. modify so that buttons "know" which answer is correct 
+
+// 3. finish checkCorrect() -- complex -- ask question
+
+// 4. modify nextQuestion to remove the "correctness" info from previous question from the button
+
+// 5. randomize answers -- modify nextQuestion
