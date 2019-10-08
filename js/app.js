@@ -354,7 +354,7 @@ class User {
 const game = {
 	score: 0,
 	usedQuestions: [],
-	
+
 	start: function(){
 		this.showQuestion()
 	},
@@ -394,9 +394,12 @@ const game = {
 	checkCorrect: function() {
 		// this will need access to the clicked button
 		// see if the clicked element is "correct"
-	}
+	},
 
-}
+	nextQuestion: function() {
+	this.game.showQuestion()
+	}
+	}
 
 game.start()
 // User sees screen with "Start Game" button,
@@ -481,16 +484,19 @@ $('#answer-4').on('click', (event) => {
 $('#next-question').on('click', (event) => {
 	console.log('Pulling next question');
 });
+$("#next-question").click(function() {
+	$("#displayed-question").remove();
+});	
 
-const me = {
-	name: "Ken",
-	greet: function() {
-		console.log("hi");
-	}
-}
+// const me = {
+// 	name: "Ken",
+// 	greet: function() {
+// 		console.log("hi");
+// 	}
+// }
 
-console.log(me.name); // me is the object, name is the property(k-v pair) on the object
-me.greet()
+// console.log(me.name); // me is the object, name is the property(k-v pair) on the object
+// me.greet()
 
 // 1. nextQuestion should remove old one, show next one
 
