@@ -441,17 +441,29 @@ $('#start').on('click', (event) => {
 	console.log('Button Works');
 });
 $('#answer-1').on('click', (event) => {
-	console.log('This is totally right!');
+	console.log('This is totally right!');	
+});
+$('#answer-1').on('click', (event) => {
+	$("#answer-1").css("color", "green");
 });
 $('#answer-2').on('click', (event) => {
 	console.log('Sorry, this is wrong!');
 });
+$('#answer-2').on('click', (event) => {
+	$("#answer-2").css("color", "red");
+});
 $('#answer-3').on('click', (event) => {
 	console.log('Sorry, this is wrong!');
 });
+$('#answer-3').on('click', (event) => {
+	$("#answer-3").css("color", "red");
+});
 $('#answer-4').on('click', (event) => {
 	console.log('Sorry, this is wrong!');
-});		
+});
+$('#answer-4').on('click', (event) => {
+	$("#answer-4").css("color", "red");
+});			
 $('#next-question').on('click', (event) => {
 	console.log('Pulling next question');
 });
