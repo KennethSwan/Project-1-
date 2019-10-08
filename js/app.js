@@ -356,7 +356,7 @@ const game = {
 	usedQuestions: [],
 
 	start: function(){
-		this.showQuestion()
+	
 	},
 
 
@@ -450,7 +450,7 @@ game.start()
 // screen as well to pull up the next question
 
 $('#start').on('click', (event) => {
-	console.log('Button Works');
+	game.showQuestion()
 });
 $('#answer-1').on('click', (event) => {
 	console.log('This is totally right!');	
@@ -484,10 +484,12 @@ $('#answer-4').on('click', (event) => {
 $('#next-question').on('click', (event) => {
 	console.log('Pulling next question');
 });
-$("#next-question").click(function() {
-	$("#displayed-question").remove();
+$("#next-question").on('click', (event) => {
+	$(".answers").empty();
+});
+$("#next-question").on('click', (event) => {
+	game.showQuestion()
 });	
-
 // const me = {
 // 	name: "Ken",
 // 	greet: function() {
