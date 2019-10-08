@@ -441,7 +441,19 @@ $('#start').on('click', (event) => {
 	console.log('Button Works');
 });
 $('#answer-1').on('click', (event) => {
-	console.log('This is totally right, pulling next question!');
+	console.log('This is totally right!');
+});
+$('#answer-2').on('click', (event) => {
+	console.log('Sorry, this is wrong!');
+});
+$('#answer-3').on('click', (event) => {
+	console.log('Sorry, this is wrong!');
+});
+$('#answer-4').on('click', (event) => {
+	console.log('Sorry, this is wrong!');
+});		
+$('#next-question').on('click', (event) => {
+	console.log('Pulling next question');
 });
 // 2. next questions -- button that scrolls through questions
 
