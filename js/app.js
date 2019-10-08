@@ -441,7 +441,7 @@ $('#start').on('click', (event) => {
 	console.log('Button Works');
 });
 $('#answer-1').on('click', (event) => {
-	console.log('This is totally right!');
+	console.log('This is totally right, pulling next question!');
 });
 // 2. next questions -- button that scrolls through questions
 
