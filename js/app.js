@@ -373,18 +373,24 @@ const game = {
 		const displayedAnswers = displayedQuestion.answers
 		for(let i = 0; i < displayedQuestion.answers.length; i++){
 			const $answerDiv = $('<div/>'); 
-			$("button div").addClass("isCorrect");
-			$("button div").addClass("isIncorrect");
-			$("button div").attr('id', 'correct');
-			// if (questions.answers[correct] = true) {
-			// 	console.log("You are correct");
-			// } else {
-			// 	console.log("You're wrong!");
-			// }
-			// somehow put whether this is correct "in" the button or the answer div or both use classes ya dummy 
-
+			// console.log(displayedQuestion.answers[i]);
+			console.log("this is the div inside the button; check class");
+			console.log($("button div"));
 			$answerDiv.text(displayedQuestion.answers[i].text);
 			$(`#answer-${i+1}`).append($answerDiv);
+
+			if(displayedQuestion.answers[i].correct === true){
+				$(`#answer-${i+1}`).addClass("isCorrect");
+				$("#true").css("color", "green");
+			} else if(displayedQuestion.answers[i].correct === false) {
+				$(`#answer-${i+1}`).addClass("isIncorrect");
+				$("false").css("color", "red");
+			}
+
+			// $(`#answer-${i+1}`).remove();
+			// $(`#answer-${i+1}`).remove();
+			console.log($('button'));
+
 			console.log(displayedAnswers);
 
 		}
@@ -401,7 +407,13 @@ const game = {
 
 	},
 
-	checkCorrect: function() {
+	checkCorrect: function(answer) {
+		console.log(answer);
+		// if(questions[i].answers.correct == true){
+		// 	console.log("correct");
+		// }else{
+		// 	console.log("incorrect");
+		// }
 		// this will need access to the clicked button
 		// see if the clicked element is "correct"
 	},
@@ -409,7 +421,7 @@ const game = {
 	nextQuestion: function() {
 		this.game.showQuestion()
 		const nextAnswers = displayedQuestion.answers[i];
-		for(let i = 0; i < displayedQuestion.answers.length; i++){ 
+		for(let i = 0; i <= displayedQuestion.answers.length; i++){ 
 			console.log(displayedAnswers);
 		}
 	}
@@ -466,35 +478,35 @@ game.start()
 $('#start').on('click', (event) => {
 	game.showQuestion()
 });
-$('#answer-1').on('click', (event) => {
-	console.log('This is totally right!');	
+$('.answer').on('click', (event) => {
+	$(".answer").css("color", "green");
+	console.log("this is event.currentTarget");
+	console.log(event.currentTarget);
+	// game.checkCorrect(event.target);
+	// console.log('This is totally right!');	
 });
-$('#answer-1').on('click', (event) => {
-	$("#answer-1").css("color", "green");
-});
-$('#answer-2').on('click', (event) => {
-	console.log('Sorry, this is wrong!');
-});
-$('#answer-2').on('click', (event) => {
-	$("#answer-2").css("color", "red");
-});
-$('#answer-3').on('click', (event) => {
-	console.log('Sorry, this is wrong!');
-});
-$('#answer-3').on('click', (event) => {
-	$("#answer-3").css("color", "red");
-});
-$('#answer-4').on('click', (event) => {
-	// console.log(event);
-	// // currentTarget is a property on the event object -- this is the HTML element listener was attached to
-	// console.log(event.currentTarget); 
+// set to all answer buttons, pass e.target to checkCorrect function 
+// $('#answer-2').on('click', (event) => {
+// 	$("#answer-2").css("color", "red");
+// 	console.log('Sorry, this is wrong!');
+// });
 
-	// game.checkCorrect()	
-	console.log('Sorry, this is wrong!');
-});
-$('#answer-4').on('click', (event) => {
-	$("#answer-4").css("color", "red");
-});			
+// $('#answer-3').on('click', (event) => {
+// 	$("#answer-3").css("color", "red");
+// 	console.log('Sorry, this is wrong!');
+// });
+
+// $('#answer-4').on('click', (event) => {
+// 	// console.log(event);
+// 	// // currentTarget is a property on the event object -- this is the HTML element listener was attached to
+// 	// console.log(event.currentTarget); 
+
+// 	// game.checkCorrect()	
+// 	console.log('Sorry, this is wrong!');
+// });
+// $('#answer-4').on('click', (event) => {
+// 	$("#answer-4").css("color", "red");
+// });			
 $('#nextQuestion').on('click', (event) => {
 	console.log('Pulling next question');
 });
