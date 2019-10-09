@@ -375,6 +375,7 @@ const game = {
 			const $answerDiv = $('<div/>'); 
 			$("button div").addClass("isCorrect");
 			$("button div").addClass("isIncorrect");
+			$("button div").attr('id', 'correct');
 			// if (questions.answers[correct] = true) {
 			// 	console.log("You are correct");
 			// } else {
