@@ -373,8 +373,14 @@ const game = {
 		const displayedAnswers = displayedQuestion.answers
 		for(let i = 0; i < displayedQuestion.answers.length; i++){
 			const $answerDiv = $('<div/>'); 
-			
-			// somehow put whether this is correct "in" the button
+			$("button div").addClass("isCorrect");
+			$("button div").addClass("isIncorrect");
+			// if (questions.answers[correct] = true) {
+			// 	console.log("You are correct");
+			// } else {
+			// 	console.log("You're wrong!");
+			// }
+			// somehow put whether this is correct "in" the button or the answer div or both use classes ya dummy 
 
 			$answerDiv.text(displayedQuestion.answers[i].text);
 			$(`#answer-${i+1}`).append($answerDiv);
