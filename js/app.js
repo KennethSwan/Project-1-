@@ -271,7 +271,7 @@ const questions = [
 				correct: false,
 			},
 			{	
-				text: "Birdman",
+				text: "Bartman",
 				correct: false,
 
 			},
@@ -363,6 +363,9 @@ const game = {
 	// user sees question w answers:
 	showQuestion: function() { // 1. get this working
 
+		// remove old answer divs from inside buttons
+		$("button div").remove();
+
 		// get question out of main array
 		const displayedQuestion = questions.pop();
 		console.log(displayedQuestion);
@@ -397,9 +400,13 @@ const game = {
 	},
 
 	nextQuestion: function() {
-	this.game.showQuestion()
+		this.game.showQuestion()
+		const nextAnswers = displayedQuestion.answers[i];
+		for(let i = 0; i < displayedQuestion.answers.length; i++){ 
+			console.log(displayedAnswers);
+		}
 	}
-	}
+}
 
 game.start()
 // User sees screen with "Start Game" button,
@@ -471,25 +478,28 @@ $('#answer-3').on('click', (event) => {
 	$("#answer-3").css("color", "red");
 });
 $('#answer-4').on('click', (event) => {
-	console.log(event);
-	// currentTarget is a property on the event object -- this is the HTML element listener was attached to
-	console.log(event.currentTarget); 
+	// console.log(event);
+	// // currentTarget is a property on the event object -- this is the HTML element listener was attached to
+	// console.log(event.currentTarget); 
 
-	game.checkCorrect()	
+	// game.checkCorrect()	
 	console.log('Sorry, this is wrong!');
 });
 $('#answer-4').on('click', (event) => {
 	$("#answer-4").css("color", "red");
 });			
-$('#next-question').on('click', (event) => {
+$('#nextQuestion').on('click', (event) => {
 	console.log('Pulling next question');
 });
-$("#next-question").on('click', (event) => {
-	$(".answers").empty();
-});
-$("#next-question").on('click', (event) => {
-	game.showQuestion()
+// $('#next-question').on('click', (event) => {
+// 	$('.answers').remove()	
+// });
+$("#nextQuestion").on('click', (event) => {
+	game.showQuestion();
 });	
+// $("#next-question").on('click', (event) => {
+	
+// });
 // const me = {
 // 	name: "Ken",
 // 	greet: function() {
