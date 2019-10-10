@@ -409,7 +409,6 @@ const game = {
 
 
 
-
 		// make question appear on screen 
 		const $displayedQuestion = $('#displayed-question')
 		$displayedQuestion.attr('id', 'displayed-question')	
@@ -424,6 +423,11 @@ const game = {
 		this.checkCorrect();
 	},
 
+	printScore() {
+		const $score = $('#score');
+		$score.text(`Score: ${this.score}`)
+	},
+
 	checkCorrect: function(element) {
 		const $element = $(element)
 
@@ -431,10 +435,13 @@ const game = {
 		if($(element).hasClass("isCorrect")) {
 			console.log("true");
 			// next question;
+			game.score++;
+			this.printScore()
 			this.showQuestion();
 			// $(`#answer-${i+1}`).css('background', 'green')
 		} else {
 			console.log("false");
+			$("img").attr("src", "Gritty.png")
 			// game over
 
 			// $(`#answer-${i+1}`).css('background', 'red')
