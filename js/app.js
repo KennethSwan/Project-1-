@@ -354,6 +354,8 @@ class User {
 const game = {
 	score: 0,
 	usedQuestions: [],
+	displayedQuestion: null,
+	// displayedAnswers: null,
 
 	start: function(){
 	
@@ -362,49 +364,64 @@ const game = {
 
 	// user sees question w answers:
 	showQuestion: function() { // 1. get this working
-
 		// remove old answer divs from inside buttons
 		$("button div").remove();
 
-		// get question out of main array
-		const displayedQuestion = questions.pop();
-		// console.log(displayedQuestion);
+		// let i = 0
+		// while (questions.length > 0){
+			// i++
+			const randomQuestionIndex = Math.floor(Math.random() * questions.length);
+			// this.displayedQuestion = questions.pop();
+			this.displayedQuestion = questions.splice(randomQuestionIndex, 1);
+			console.log("this is displayedQuestion immediately after setting and before the loop");
+			console.log(this.displayedQuestion);
+			// get question out of main array
+			const displayedAnswers = this.displayedQuestion[0].answers
+			// console.log(this.displayedQuestion[0].answers);
+			const availableIndex = [0, 1, 2, 3];
+			for(let i = 0; i < displayedAnswers.length; i++) {
+				// get random index to use to pick a random answer
+				const randomIndex = Math.floor(Math.random() * availableIndex.length);
+				// console.log("this is randomIndex");
+				// console.log(randomIndex);
+				const $answerDiv = $('<div/>'); 
+				$(`#answer-${i+1}`).append($answerDiv);
+				const indexToUse = availableIndex.splice(randomIndex, 1)[0];
+				// console.log(availableIndex);
+				// console.log(indexToUse, "indexToUse");
+				$answerDiv.text(displayedAnswers[indexToUse].text);
+				// console.log("this is displayedAnswers[randomAnswerIndex]");
+				// console.log(displayedAnswers[randomAnswerIndex]);
+				// remove isCorrect and isIncorrect from each button
+				// $(`#answer-${i+1}`).removeClass("isCorrect isIncorrect")
 
-		const displayedAnswers = displayedQuestion.answers
-		for(let i = 0; i < displayedQuestion.answers.length; i++){
-			const $answerDiv = $('<div/>'); 
-			// console.log(displayedQuestion.answers[i]);
-			// console.log("this is the div inside the button; check class");
-			// console.log($("button div"));
-			$answerDiv.text(displayedQuestion.answers[i].text);
-			$(`#answer-${i+1}`).append($answerDiv);
 
-			if(displayedQuestion.answers[i].correct === true){
-				$(`#answer-${i+1}`).addClass("isCorrect");
-				// console.log("this is correct");
-			} else if(displayedQuestion.answers[i].correct === false) {
-				$(`#answer-${i+1}`).addClass("isIncorrect");
-				// console.log("this is not correct");
+				if(displayedAnswers[indexToUse].correct === true){
+					$(`#answer-${i+1}`).addClass("isCorrect");
+					
+				} else if(displayedAnswers[indexToUse].correct === false) {
+					$(`#answer-${i+1}`).addClass("isIncorrect");				
+				}
+
 			}
 
-			// $(`#answer-${i+1}`).remove();
-			
-			// console.log($('button'));
+		 // }
 
-			// console.log(displayedAnswers);
 
-		}
-		// console.log(questions[0]);
-		// make question appear on screen -- don't forget to remove old one
-			// (jQuery)
+
+
+		// make question appear on screen 
 		const $displayedQuestion = $('#displayed-question')
 		$displayedQuestion.attr('id', 'displayed-question')	
-		$displayedQuestion.text(`question: ${displayedQuestion.text}`);
+		console.log(this.displayedQuestion);
+		console.log($displayedQuestion[0]);
+		$displayedQuestion.text(`question: ${this.displayedQuestion[0].text}`);
 		// put it used questions array
-		this.usedQuestions.push(displayedQuestion);
-		// console.log(this.usedQuestions);
+		this.usedQuestions.push(this.displayedQuestion);
+		
 
 
+		this.checkCorrect();
 	},
 
 	checkCorrect: function(element) {
@@ -510,15 +527,15 @@ $('.answer').on('click', (event) => {
 // $('#answer-4').on('click', (event) => {
 // 	$("#answer-4").css("color", "red");
 // });			
-$('#nextQuestion').on('click', (event) => {
-	console.log('Pulling next question');
-});
+// $('#nextQuestion').on('click', (event) => {
+// 	console.log('Pulling next question');
+// });
 // $('#next-question').on('click', (event) => {
 // 	$('.answers').remove()	
 // });
-$("#nextQuestion").on('click', (event) => {
-	game.showQuestion();
-});	
+// $("#nextQuestion").on('click', (event) => {
+// 	game.showQuestion();
+// });	
 // $("#next-question").on('click', (event) => {
 	
 // });
