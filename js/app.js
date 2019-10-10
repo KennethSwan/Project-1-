@@ -368,30 +368,33 @@ const game = {
 
 		// get question out of main array
 		const displayedQuestion = questions.pop();
-		console.log(displayedQuestion);
+		// console.log(displayedQuestion);
 
 		const displayedAnswers = displayedQuestion.answers
 		for(let i = 0; i < displayedQuestion.answers.length; i++){
 			const $answerDiv = $('<div/>'); 
 			// console.log(displayedQuestion.answers[i]);
-			console.log("this is the div inside the button; check class");
-			console.log($("button div"));
+			// console.log("this is the div inside the button; check class");
+			// console.log($("button div"));
 			$answerDiv.text(displayedQuestion.answers[i].text);
 			$(`#answer-${i+1}`).append($answerDiv);
 
 			if(displayedQuestion.answers[i].correct === true){
 				$(`#answer-${i+1}`).addClass("isCorrect");
-				$("#true").css("color", "green");
+				// console.log("this is correct");
+				// $("#true").css("color", "green");
 			} else if(displayedQuestion.answers[i].correct === false) {
 				$(`#answer-${i+1}`).addClass("isIncorrect");
-				$("false").css("color", "red");
+				// console.log("this is not correct");
+				// $("false").css("color", "red");
 			}
 
 			// $(`#answer-${i+1}`).remove();
 			// $(`#answer-${i+1}`).remove();
-			console.log($('button'));
+			
+			// console.log($('button'));
 
-			console.log(displayedAnswers);
+			// console.log(displayedAnswers);
 
 		}
 		// console.log(questions[0]);
@@ -402,13 +405,29 @@ const game = {
 		$displayedQuestion.text(`question: ${displayedQuestion.text}`);
 		// put it used questions array
 		this.usedQuestions.push(displayedQuestion);
-		console.log(this.usedQuestions);
+		// console.log(this.usedQuestions);
 
 
 	},
 
-	checkCorrect: function(answer) {
-		console.log(answer);
+	checkCorrect: function(element) {
+		// console.log(element);
+		const $element = $(element)
+		console.log($element);
+
+		// check if $element has class isCorrect with jQuery
+		if($(element).hasClass("isCorrect")) {
+			console.log("true");
+		}else{
+			console.log("false");
+		}
+		// if( === true) {
+		// 	console.log("correct");
+		// }else{
+		// 	console.log("incorrect");
+		// };
+
+
 		// if(questions[i].answers.correct == true){
 		// 	console.log("correct");
 		// }else{
@@ -416,6 +435,11 @@ const game = {
 		// }
 		// this will need access to the clicked button
 		// see if the clicked element is "correct"
+
+		// if(showQuestion.correct === true) {
+		// 	console.log("correct");
+		// }
+
 	},
 
 	nextQuestion: function() {
@@ -482,6 +506,7 @@ $('.answer').on('click', (event) => {
 	$(".answer").css("color", "green");
 	console.log("this is event.currentTarget");
 	console.log(event.currentTarget);
+	game.checkCorrect(event.currentTarget)
 	// game.checkCorrect(event.target);
 	// console.log('This is totally right!');	
 });
