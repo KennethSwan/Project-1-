@@ -382,14 +382,11 @@ const game = {
 			if(displayedQuestion.answers[i].correct === true){
 				$(`#answer-${i+1}`).addClass("isCorrect");
 				// console.log("this is correct");
-				// $("#true").css("color", "green");
 			} else if(displayedQuestion.answers[i].correct === false) {
 				$(`#answer-${i+1}`).addClass("isIncorrect");
 				// console.log("this is not correct");
-				// $("false").css("color", "red");
 			}
 
-			// $(`#answer-${i+1}`).remove();
 			// $(`#answer-${i+1}`).remove();
 			
 			// console.log($('button'));
@@ -411,44 +408,26 @@ const game = {
 	},
 
 	checkCorrect: function(element) {
-		// console.log(element);
 		const $element = $(element)
-		console.log($element);
 
 		// check if $element has class isCorrect with jQuery
 		if($(element).hasClass("isCorrect")) {
 			console.log("true");
-		}else{
+			// next question;
+			this.showQuestion();
+			// $(`#answer-${i+1}`).css('background', 'green')
+		} else {
 			console.log("false");
+			// game over
+
+			// $(`#answer-${i+1}`).css('background', 'red')
 		}
-		// if( === true) {
-		// 	console.log("correct");
-		// }else{
-		// 	console.log("incorrect");
-		// };
 
 
-		// if(questions[i].answers.correct == true){
-		// 	console.log("correct");
-		// }else{
-		// 	console.log("incorrect");
-		// }
-		// this will need access to the clicked button
-		// see if the clicked element is "correct"
-
-		// if(showQuestion.correct === true) {
-		// 	console.log("correct");
-		// }
 
 	},
 
-	nextQuestion: function() {
-		this.game.showQuestion()
-		const nextAnswers = displayedQuestion.answers[i];
-		for(let i = 0; i <= displayedQuestion.answers.length; i++){ 
-			console.log(displayedAnswers);
-		}
-	}
+
 }
 
 game.start()
@@ -503,7 +482,6 @@ $('#start').on('click', (event) => {
 	game.showQuestion()
 });
 $('.answer').on('click', (event) => {
-	$(".answer").css("color", "green");
 	console.log("this is event.currentTarget");
 	console.log(event.currentTarget);
 	game.checkCorrect(event.currentTarget)
