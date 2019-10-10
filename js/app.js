@@ -438,10 +438,11 @@ const game = {
 			game.score++;
 			this.printScore()
 			this.showQuestion();
+			$("img").attr("src", "https://media1.giphy.com/media/NeKB8ZR67TuV2/giphy.webp?cid=790b76119a129915b9757d39ac7e168cecd533ab19adc73a&rid=giphy.webp")
 			// $(`#answer-${i+1}`).css('background', 'green')
 		} else {
 			console.log("false");
-			$("img").attr("src", "Gritty.png")
+			// $("img").attr("src", "Gritty.png")
 			// game over
 
 			// $(`#answer-${i+1}`).css('background', 'red')
