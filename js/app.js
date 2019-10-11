@@ -393,7 +393,7 @@ const game = {
 				// console.log("this is displayedAnswers[randomAnswerIndex]");
 				// console.log(displayedAnswers[randomAnswerIndex]);
 				// remove isCorrect and isIncorrect from each button
-				// $(`#answer-${i+1}`).removeClass("isCorrect isIncorrect")
+				$(`#answer-${i+1}`).removeClass("isCorrect isIncorrect")
 
 
 				if(displayedAnswers[indexToUse].correct === true){
@@ -505,6 +505,7 @@ game.start()
 
 $('#start').on('click', (event) => {
 	game.showQuestion()
+	$("img").attr("src", "https://www.chicagotribune.com/resizer/hU2F4OlaAqJnTM-QWim6j6YIBpo=/1200x674/top/www.trbimg.com/img-5cca1dd0/turbine/ct-1556749771-f4ynoeu1io-snap-image")
 });
 $('.answer').on('click', (event) => {
 	console.log("this is event.currentTarget");
