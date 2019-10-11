@@ -416,17 +416,19 @@ const game = {
 			game.score++;
 			this.printScore();
 			this.showQuestion();
-			$("img").attr("src", "https://media2.giphy.com/media/mgqefqwSbToPe/200.webp?cid=790b7611dd023346d3a523c6d743f129f14cdf7c53f21f8c&rid=200.webp");
+			$("img").attr("src", "https://media1.giphy.com/media/d2ZeMUDQSSsCP9FC/200.webp?cid=790b7611435c204c228be4be6e36d38e8c59068bf0a1d296&rid=200.webp")
 		} else {
 			$("img").attr("src", "https://media1.giphy.com/media/9V1CQqu1CM8ZhNeVdW/giphy.gif?cid=790b7611010a7ed11f4bd555090c749e88badd1168220e04&rid=giphy.gif")
 			console.log("false");
-			// $("img").attr("src", "Gritty.png")
+			$("img").attr("src", "Gritty.png")
 			// game over
 		};
-
-	},
-
-}
+		if (this.score === 14) {
+			$("img").attr("src", "https://media1.giphy.com/media/ToMjGpyO2OVfPLpoxu8/200.webp?cid=790b7611356b6ef5875e04649bbd651675c4c55b319f87ca&rid=200.webp")
+		};
+		}
+	}
+// }	
 
 game.start()
 // User sees screen with "Start Game" button,
