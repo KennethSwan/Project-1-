@@ -360,7 +360,6 @@ const game = {
 	
 	},
 
-
 	// user sees question w answers:
 	showQuestion: function() { // 1. get this working
 		// remove old answer divs from inside buttons
@@ -420,15 +419,13 @@ const game = {
 		} else {
 			$("img").attr("src", "https://media1.giphy.com/media/9V1CQqu1CM8ZhNeVdW/giphy.gif?cid=790b7611010a7ed11f4bd555090c749e88badd1168220e04&rid=giphy.gif")
 			console.log("false");
-			$("img").attr("src", "Gritty.png")
 			// game over
 		};
-		if (this.score === 14) {
-			$("img").attr("src", "https://media1.giphy.com/media/ToMjGpyO2OVfPLpoxu8/200.webp?cid=790b7611356b6ef5875e04649bbd651675c4c55b319f87ca&rid=200.webp")
-		};
+		if(game.score === 15) {
+			$("img").attr("src", "https://media3.giphy.com/media/6kfm5ApVw4W4w/200.webp?cid=790b7611354e8a19a6914e4a1f1ae321a09de0bc9f3c0411&rid=200.webp")
 		}
 	}
-// }	
+}
 
 game.start()
 // User sees screen with "Start Game" button,
