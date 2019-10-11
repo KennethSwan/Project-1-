@@ -418,8 +418,7 @@ const game = {
 			this.showQuestion();
 			$("img").attr("src", "https://media2.giphy.com/media/mgqefqwSbToPe/200.webp?cid=790b7611dd023346d3a523c6d743f129f14cdf7c53f21f8c&rid=200.webp");
 		} else {
-			$("img").attr("src", "https://media3.giphy.com/media/3aGZA6WLI9Jde/giphy.gif?cid=790b76116292877737fa6c137d750f925359c8789414ac8e&rid=giphy.gif");
-			$("img").attr("src", "Gritty.png")
+			$("img").attr("src", "https://media1.giphy.com/media/9V1CQqu1CM8ZhNeVdW/giphy.gif?cid=790b7611010a7ed11f4bd555090c749e88badd1168220e04&rid=giphy.gif")
 			console.log("false");
 			// $("img").attr("src", "Gritty.png")
 			// game over
