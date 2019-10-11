@@ -6,7 +6,7 @@
 
 const questions = [
 	{
-		text: "What is?",
+		text: "What is the name of the NFL team that plays in Chicago?",
 		answers: [
 			{
 				text:"Bears",
@@ -29,7 +29,7 @@ const questions = [
 
 	{
 
-		text: "Who is?",
+		text: "Who is the NFL team from Philadelphia?",
 		answers: [
 			{
 				text: "Eagles",
@@ -51,7 +51,7 @@ const questions = [
 	},
 	
 	{	
-		text: "Where is?",
+		text: "Where is home of Da Bears?",
 		answers: [
 			{
 				text: "Chicago",
@@ -74,7 +74,7 @@ const questions = [
 	},
 	
 	{	
-		text: "Who is?",
+		text: "Who is the comissioner of the NFL?",
 		answers: [
 			{
 				text: "Rodger Goodell",
@@ -97,7 +97,7 @@ const questions = [
 	},
 	
 	{	
-		text: "Where is?",
+		text: "Where is the NFL Hall of Fame located?",
 		answers: [
 			{
 				text: "Ohio",
@@ -120,14 +120,14 @@ const questions = [
 	},
 	
 	{	
-		text: "Who is?",
+		text: "Who was an NFL Quarteback?",
 		answers: [
 			{
 				text: "Dan Marino",
 				correct: true,
 			},
 			{   
-				text: "Doug Flutie",
+				text: "Doug Funny",
 				correct: false,
 			},	
 			{
@@ -166,7 +166,7 @@ const questions = [
 	},
 
 		{
-		text: "Nickname?",
+		text: "Wayne Gretzky had what nickname?",
 		answers: [
 			{
 				text: "The Great One",
@@ -189,7 +189,7 @@ const questions = [
 	},
 
 		{
-		text: "What Year?",
+		text: "What Year did the NFL and the Chicago Bears both become an organization?",
 		answers: [
 			{
 				text: "1919",
@@ -211,7 +211,7 @@ const questions = [
 		], 
 	},
 		{
-		text: "What City?",
+		text: "What City is home to the Cubs and White Sox baseball teams?",
 		answers: [
 			{
 				text: "Chicago",
@@ -233,7 +233,7 @@ const questions = [
 		],
 	},
 		{
-		text: "What Ball?",
+		text: "What ball would you use if you were playing in a helmet and shoulder pads?",
 		answers: [
 			{
 				text: "Football",
@@ -256,7 +256,7 @@ const questions = [
 	},
 
 		{
-		text: "What Bat?",
+		text: "Which can be made either out of aluminum or wood?",
 		answers: [
 			{
 				text: "Baseball Bat",
@@ -279,7 +279,7 @@ const questions = [
 	},
 
 		{
-		text: "What Field?",
+		text: "What is the field called that Soccer or Football is played on called?",
 		answers: [
 			{
 				text: "Pitch",
@@ -301,7 +301,7 @@ const questions = [
 		],
 	},	
 		{
-		text: "What Statdium?",
+		text: "Which stadium do the Chicago Bears play at?",
 		answers: [
 			{
 				text: "Soldier Field",
@@ -324,7 +324,7 @@ const questions = [
 	},	
 
 	{
-		text: "Duo Nickname?",
+		text: "This was nickname given to 80's baseball greats Mark Mcguire and Jose Canseco when they played on the same Oakland Athletics baseball team?",
 		answers: [
 			{
 				text: "Bash Brothers",
